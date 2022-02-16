@@ -2,9 +2,14 @@
 const buttonStyle = `inline-flex flex-row items-center 
             bg-primary hover:bg-primary-dark disabled:bg-disabled 
             disabled:text-disabled-dark text-primary-screen 
-            rounded-lg transition-all`
+            rounded-lg transition-all font-semibold`
 
 
+/**
+ * 
+ * @param {isDisabled, onClick, children} props 
+ * @returns a normal button component that can contain a combination of text and icon
+ */
 export const Button = (props) => {
 
     const isDisabled = props.isDisabled;
@@ -25,7 +30,11 @@ export const Button = (props) => {
     )
 }
 
-
+/**
+ * 
+ * @param {isDisabled, icon, onClick} props 
+ * @returns an icon button as a perfect square
+ */
 export const IconifiedButton = (props) => {
 
     function handleOnClick(){
@@ -44,6 +53,31 @@ export const IconifiedButton = (props) => {
     )
 }
 
+export const TextButton = (props) => {
+
+    function handleOnClick(){
+        if(!props.isDisabled){
+            props.onClick();
+        }
+    }
+
+    return (
+        <button 
+            disabled={props.isDisabled}
+            className="h-[60px] m-3 py-2 px-5 text-primary hover:bg-primary-surface
+            rounded-lg hover:text-primary-dark disabled:text-disabled transition-all font-semibold"
+            onClick={handleOnClick}>
+            {props.text}
+        </button>
+    )
+}
+
+
+/**
+ * 
+ * @param {icon} props 
+ * @returns an icon with specified height
+ */
 export const ButtonIcon = (props) => {
     const icon = props.icon;
 

@@ -1,4 +1,4 @@
-import {IconifiedButton} from "../components/Button";
+import {TextButton} from "../components/Button";
 import Icon from "../assets/icons/musicnote.svg"
 
 const Home = ()=>{
@@ -9,8 +9,9 @@ const Home = ()=>{
 
     return (
         <div className="w-full h-screen grid content-center justify-items-center">
-            <IconifiedButton
+            <TextButton
                 isDisabled={true}
+                text="This is a text"
                 icon={Icon}
                 onClick={handleOnClick} />
         </div>
