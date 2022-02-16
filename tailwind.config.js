@@ -3,7 +3,24 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    colors: {
+      'primary': '#02E1CE',
+      'primary-dark': '#00BCAC',
+      'primary-accent': '#83FFF4',
+      'primary-surface': '#DDFFFC',
+      'primary-screen': '#FEFEFE',
+      'primary-text' : '#222222',
+      'disabled': '#D9D9D9',
+      'disabled-dark': '#8C8C8C'
+    },
+    extend: {
+      borderRadius: {
+        'lg': '15px',
+        'xl': '20px',
+        '2xl': '25px',
+        'full': '1000px',
+      }
+    },
   },
   plugins: [],
 }
