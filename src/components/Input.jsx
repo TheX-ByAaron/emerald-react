@@ -1,6 +1,12 @@
 
 
-const Input = (props) => {
+/**
+ * 
+ * @param {icon, disabled, type, name, value, placeholder
+ * , onValueChange, type, EmeraldStyle} props 
+ * @returns an input that is fully customizable
+ */
+ export const Input = (props) => {
 
     let icon;
     let bg;
@@ -35,4 +41,4 @@ const Input = (props) => {
     )
 }
 
-export default Input;
+

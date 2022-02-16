@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Input from "../components/Input";
+import { Input } from "../components/Input";
 import Icon from "../assets/icons/user.svg";
 
 const Home = ()=>{
@@ -9,7 +9,7 @@ const Home = ()=>{
     return (
         <div className="w-full h-screen bg-primary-surface">
             <Input 
-                EmeraldStyle="w-1/5"
+                EmeraldStyle="w-3/5"
                 icon={Icon}
                 disabled={false}
                 type="text"
