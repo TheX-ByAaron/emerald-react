@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Input } from "../components/Input";
+import { PasswordInput } from "../components/Input";
 import Icon from "../assets/icons/user.svg";
 
 const Home = ()=>{
@@ -8,10 +8,10 @@ const Home = ()=>{
 
     return (
         <div className="w-full h-screen bg-primary-surface">
-            <Input 
-                EmeraldStyle="w-3/5"
+            <PasswordInput 
+                EmeraldStyle="w-full"
                 icon={Icon}
-                disabled={false}
+                disabled={true}
                 type="text"
                 placeholder="Input a text please..."
                 value={value}

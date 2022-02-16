@@ -1,4 +1,6 @@
-
+import { useState } from 'react';
+import EyeIcon from '../assets/icons/eye.svg';
+import EyeSlashIcon from '../assets/icons/eye_slash.svg';
 
 /**
  * 
@@ -7,7 +9,6 @@
  * @returns an input that is fully customizable
  */
  export const Input = (props) => {
-
     let icon;
     let bg;
 
@@ -37,6 +38,55 @@
                 onChange={event => props.onValueChange(event)}
                 className="h-full outline-none disabled:bg-disabled 
                 disabled:placeholder:text-disabled-dark rounded-lg"/>
+        </div>
+    )
+}
+
+
+export const PasswordInput = (props) => {
+    let icon;
+    let bg;
+    const [eyeIcon, setEyeIcon] = useState(EyeSlashIcon);
+    const [isActive, setIsActive] = useState(false);
+    const [type, setType] = useState("text");
+
+    if(props.icon){
+        icon = <img src={props.icon} alt="icon" className="h-[25px] mr-3"/>
+    }else{
+        icon = <div></div>
+    }
+
+    if(props.disabled){
+        bg = `bg-disabled`
+    }else{
+        bg = `bg-primary-screen`
+    }
+
+    function togglePassword(){
+        setIsActive(!isActive);
+        if(isActive){
+            setEyeIcon(EyeSlashIcon);
+            setType("text");
+        }else{
+            setEyeIcon(EyeIcon);
+            setType("password");
+        }
+    }
+
+    return (
+        <div className={`h-[60px] px-3 
+        inline-flex flex-row items-center rounded-lg ${bg} ${props.EmeraldStyle}`}>
+            {icon}
+            <input 
+                disabled={props.disabled}
+                type={type} 
+                name={props.name} 
+                value={props.value}
+                placeholder={props.placeholder}
+                onChange={event => props.onValueChange(event)}
+                className="h-full w-full outline-none disabled:bg-disabled 
+                disabled:placeholder:text-disabled-dark rounded-lg"/>
+            <img src={eyeIcon} alt="eyeIcon" onClick={togglePassword} className="h-[20px] mx-3"/>
         </div>
     )
 }
