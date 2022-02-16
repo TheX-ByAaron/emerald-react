@@ -36,7 +36,7 @@ import EyeSlashIcon from '../assets/icons/eye_slash.svg';
                 value={props.value}
                 placeholder={props.placeholder}
                 onChange={event => props.onValueChange(event)}
-                className="h-full outline-none disabled:bg-disabled 
+                className="h-full w-full outline-none disabled:bg-disabled 
                 disabled:placeholder:text-disabled-dark rounded-lg"/>
         </div>
     )
@@ -87,6 +87,39 @@ export const PasswordInput = (props) => {
                 className="h-full w-full outline-none disabled:bg-disabled 
                 disabled:placeholder:text-disabled-dark rounded-lg"/>
             <img src={eyeIcon} alt="eyeIcon" onClick={togglePassword} className="h-[20px] mx-3"/>
+        </div>
+    )
+}
+
+
+export const ActionInput = (props) => {
+    let bg;
+
+    if(props.disabled){
+        bg = `bg-disabled`
+    }else{
+        bg = `bg-primary-screen`
+    }
+
+    return (
+        <div className={`h-[60px] px-3 
+        inline-flex flex-row items-center rounded-lg ${bg} ${props.EmeraldStyle}`}>
+            <input 
+                disabled={props.disabled}
+                type={props.type} 
+                name={props.name} 
+                value={props.value}
+                placeholder={props.placeholder}
+                onChange={event => props.onValueChange(event)}
+                className="h-full w-full outline-none disabled:bg-disabled 
+                disabled:placeholder:text-disabled-dark rounded-lg"/>
+
+            <button disabled={props.disabled}
+                    className="h-[40px] w-[40px] bg-primary-accent 
+                    hover:bg-primary disabled:bg-disabled rounded-lg transition-all">
+                <img src={props.actionIcon} alt="eyeIcon" 
+                onClick={props.onActionClick} className="h-[20px] m-auto"/>
+            </button>
         </div>
     )
 }
