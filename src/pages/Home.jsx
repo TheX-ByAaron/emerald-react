@@ -1,19 +1,23 @@
-import {TextButton} from "../components/Button";
-import Icon from "../assets/icons/musicnote.svg"
+import { useState } from "react";
+import Input from "../components/Input";
+import Icon from "../assets/icons/user.svg";
 
 const Home = ()=>{
 
-    function handleOnClick(){
-        window.alert('this is a click')
-    }
+    const [value, setValue] = useState("");
 
     return (
-        <div className="w-full h-screen grid content-center justify-items-center">
-            <TextButton
-                isDisabled={true}
-                text="This is a text"
+        <div className="w-full h-screen bg-primary-surface">
+            <Input 
+                EmeraldStyle="w-1/5"
                 icon={Icon}
-                onClick={handleOnClick} />
+                disabled={false}
+                type="text"
+                placeholder="Input a text please..."
+                value={value}
+                onValueChange={(event) => {
+                    setValue(event.target.value);
+                }}/>
         </div>
     )
 }
