@@ -5,6 +5,9 @@ import {
   Route
 } from "react-router-dom";
 import ErrorBoundary from "./pages/ErrorBoundary";
+import Modal from "react-modal"
+
+Modal.setAppElement("#root");
 
 function App() {
   return (

@@ -11,7 +11,8 @@ module.exports = {
       'primary-screen': '#FEFEFE',
       'primary-text' : '#222222',
       'disabled': '#D9D9D9',
-      'disabled-dark': '#8C8C8C'
+      'disabled-dark': '#8C8C8C',
+      'primary-surface-black': "#222222",
     },
     extend: {
       borderRadius: {
