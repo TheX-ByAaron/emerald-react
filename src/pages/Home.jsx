@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { IconifiedButton } from "../components/Button";
+import icon from "../assets/icons/musicnote.svg";
 import LoadingDialog from "../components/LoadingDialog";
 import animation from "../assets/animations/crazed_rabbit.json";
+import { RoundCheckBox, SquareCheckBox, SquareLineCheckBox} from "../components/CheckBox";
 
 const Home = ()=>{
 
@@ -11,12 +14,12 @@ const Home = ()=>{
     // }
 
     function closeHandler(){
-        setIsOpen(false);
+        setIsOpen(!isOpen);
     }
     return (
         <div className="w-full h-screen grid content-center justify-items-center 
         bg-primary-surface">
-            <LoadingDialog
+            {/* <LoadingDialog
                 loop={true}
                 play={true}
                 animationData={animation}
@@ -24,7 +27,31 @@ const Home = ()=>{
                 onRequestClose={closeHandler}
                 height={60}
                 width={60}
+                /> */}
+           <RoundCheckBox
+                disabled={false}
+                name="checkbox"
+                value="check me out"
+                checked={isOpen}
+                onCheckChange={closeHandler}
                 />
+
+           <SquareCheckBox 
+                disabled={false}
+                name="checkbox"
+                value="check me out"
+                checked={isOpen}
+                onCheckChange={closeHandler}
+                />
+
+           <SquareLineCheckBox 
+                disabled={false}
+                name="checkbox"
+                value="check me out"
+                checked={isOpen}
+                onCheckChange={closeHandler}
+                />
+            
         </div>
     )
 }
