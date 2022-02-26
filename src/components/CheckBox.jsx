@@ -19,7 +19,7 @@ export const RoundCheckBox = (props) => {
     }
 
     return (
-        <div className="grid grid-cols-1 grid-rows-1 place-items-center place-content-center relative ">
+        <div className="grid grid-cols-1 grid-rows-1 place-items-center place-content-center relative">
             <input 
             type="checkbox"
             name={props.name}
