@@ -21,8 +21,10 @@ const SideNav = (props) => {
 
                             <div className={`w-full mx-auto inline-flex flex-row 
                                 items-center m-2 py-1 hover:bg-primary-screen rounded-lg transition-all 
-                                ${(index === activeItemIndex)? "bg-primary-screen text-primary" : ""}`}>
-                                <img src={item.icon} alt="nav icon" className="h-7 m-2"/>
+                                ${(index === activeItemIndex)? "bg-primary-screen text-primary stroke-primary" : "stroke-primary-surface-black"}`}>
+                                <div className="h-7 w-7 m-2">
+                                    {item.icon} 
+                                </div>
                                 <p className="mr-3">{item.title}</p>
                             </div>
                         </li>

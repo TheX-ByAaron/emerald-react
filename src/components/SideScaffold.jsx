@@ -25,10 +25,10 @@ const SideScaffold = (props) => {
                 {props.sideNav}
             </div>
             <div className={`transition-all ${contentMargin}`}>
-                <div className="h-fit p-3">
+                <div className="z-10 h-[50px] w-full p-3 fixed top-0 bg-primary-surface">
                     <img src={menu} alt="menu" onClick={toggleContentMargin} className="h-7 my-auto"/>
                 </div>
-                <div>
+                <div className="mt-[50px]">
                     {props.children}
                 </div>
             </div>
