@@ -4,7 +4,7 @@ const ImageCheckBox = (props) => {
 
     let checkOverlay;
 
-    if(props.checked){
+    if(!props.checked){
         checkOverlay = "opacity-0"
     }else{
         checkOverlay = "opacity-1"
